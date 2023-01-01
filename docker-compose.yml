@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  front:
+    build:
+      context: ./front
+    container_name: front
+    tty: true
+    volumes:
+     - ./front:/usr/app/front
+    working_dir: /usr/app/front
+    command: sh -c "apk update && apk add git && yarn install && yarn start"
+    ports:
+    # viteのためポート5173
+     - "5173:5173"
+    environment:
+     - CHOKIDAR_USEPOLLING=true
+  api:
+    tty: true
+    build:
+     context: ./api
+    # command: sh -c "apk update && apk add git"
+    ports:
+     - 5000:3000
+     - 5555:5555
+    volumes:
+     - ./api:/usr/app/api

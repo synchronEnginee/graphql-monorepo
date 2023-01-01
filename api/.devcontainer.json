@@ -1,0 +1,21 @@
+{
+  "name": "api",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "api",
+  "workspaceFolder": "/usr/app/api",
+  "postCreateCommand": "apk update && apk add git",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "oderwat.indent-rainbow",
+        "esbenp.prettier-vscode",
+        "steoates.autoimport",
+        "eamodio.gitlens",
+        "GraphQL.vscode-graphql",
+        "Prisma.prisma"
+      ]
+    }
+  }
+}
