@@ -71,3 +71,26 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+# 導入手順
+
+- @nestjs/cliをyarn global add
+- nest new プロジェクト名
+[graphqlを使うときの必要ライブラリ](https://docs.nestjs.com/graphql/quick-start)
+- yarn add @nestjs/graphql @nestjs/apollo graphql apollo-server-express
+
+yarn add -D prisma
+<!-- cli追加 -->
+yarn prisma
+<!-- init実行でprismaディレクトリができる -->
+yarn prisma init
+
+yarn add -D prisma-json-schema-generator
+
+yarn add @prisma/client
+# prisma.schemaに沿ったDDLを流す(prismaのO/R)
+yarn prisma migrate dev --name dividend
+
+# GUIでレコード追加できるサーバ起動
+yarn prisma studio

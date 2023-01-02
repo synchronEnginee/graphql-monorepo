@@ -7,6 +7,7 @@ services:
     tty: true
     volumes:
      - ./front:/usr/app/front
+     - front_node_modules:/usr/app/front/node_modules
     working_dir: /usr/app/front
     command: sh -c "apk update && apk add git && yarn install && yarn start"
     ports:
@@ -18,9 +19,24 @@ services:
     tty: true
     build:
      context: ./api
-    # command: sh -c "apk update && apk add git"
+    command: sh -c "apk update && apk add git && yarn install && yarn start:dev"
     ports:
      - 5000:3000
      - 5555:5555
     volumes:
      - ./api:/usr/app/api
+     - api_node_modules:/usr/app/api/node_modules
+  db:
+    image: postgres:14
+    container_name: db
+    ports:
+     - 5432:5432
+    # 省略でデータベース名postgres、ユーザ名postgres
+    environment:
+     - POSTGRES_PASSWORD=passw0rd
+    volumes:
+     - ./db:/var/lib/postgresql/data
+
+volumes:
+  front_node_modules:
+  api_node_modules:
