@@ -76,6 +76,7 @@ Nest is [MIT licensed](LICENSE).
 # 導入手順
 
 - @nestjs/cliをyarn global add
+  Dockerの場合はglobal installは使う度にinstallの必要あり
 - nest new プロジェクト名
 [graphqlを使うときの必要ライブラリ](https://docs.nestjs.com/graphql/quick-start)
 - yarn add @nestjs/graphql @nestjs/apollo graphql apollo-server-express
@@ -94,3 +95,16 @@ yarn prisma migrate dev --name dividend
 
 # GUIでレコード追加できるサーバ起動
 yarn prisma studio
+
+
+# nestjsでgraphqlの処理を実装
+
+- yarn global add @nestjs/cli
+- nest --help
+- nest generate module user
+- nest generate class
+ user/user
+- nest generate resolver user
+- app.module.tsを編集
+
+schema.gqlが自動で生成される

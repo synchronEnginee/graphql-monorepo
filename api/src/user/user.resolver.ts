@@ -1,0 +1,22 @@
+import {
+  InputType,
+  Resolver,
+  Field,
+  Args,
+  Query,
+  Mutation,
+} from '@nestjs/graphql';
+import { Inject } from '@nestjs/common';
+
+import { PrismaService } from 'src/prisma.service';
+import { User } from './user/user';
+
+@Resolver(User)
+export class UserResolver {
+  constructor(@Inject(PrismaService) private prismaService: PrismaService) {}
+
+  @Query((returns) => User, { nullable: true })
+  getUserById(@Args('id') id: number) {
+    return this.prismaService.user.findUnique({ where: { id } });
+  }
+}
