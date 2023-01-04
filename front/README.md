@@ -54,3 +54,19 @@ yarn add -D eslint-plugin-jest eslint-plugin-jest-dom eslint-plugin-testing-libr
 
 jest.config.json
 jest.setup.ts
+
+
+# graphql code generator追加
+
+- yarn add graphql
+- yarn add -D @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/client-preset
+
+<!-- @graphql-codegen/typescript-resolvers @graphql-codegen/typescript-react-query @graphql-codegen/typescript-operations  -->
+
+- yarn graphql-code-generator init
+→codegen.ymlファイルを作成(codegen.tsだとエラーになる)
+
+[client-preset target output should be ...](https://github.com/dotansimha/graphql-code-generator/discussions/8684)
+
+
+- src配下にcodegenで指定したdocument（graphqlのクエリ文）を自分で作成する

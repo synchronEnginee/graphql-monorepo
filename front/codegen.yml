@@ -1,0 +1,7 @@
+overwrite: true
+schema: "schema.gql"
+documents: "src/**/*.query.graphql"
+generates:
+  src/gql/:
+    preset: "client"
+    plugins: []
