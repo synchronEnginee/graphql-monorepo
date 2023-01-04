@@ -81,15 +81,16 @@ Nest is [MIT licensed](LICENSE).
 [graphqlを使うときの必要ライブラリ](https://docs.nestjs.com/graphql/quick-start)
 - yarn add @nestjs/graphql @nestjs/apollo graphql apollo-server-express
 
-yarn add -D prisma
+- yarn add -D prisma
 <!-- cli追加 -->
-yarn prisma
+- yarn prisma
 <!-- init実行でprismaディレクトリができる -->
-yarn prisma init
+- yarn prisma init
 
-yarn add -D prisma-json-schema-generator
+- yarn add -D prisma-json-schema-generator
 
-yarn add @prisma/client
+- yarn add @prisma/client
+
 # prisma.schemaに沿ったDDLを流す(prismaのO/R)
 yarn prisma migrate dev --name dividend
 
@@ -107,4 +108,8 @@ yarn prisma studio
 - nest generate resolver user
 - app.module.tsを編集
 
-schema.gqlが自動で生成される
+- schema.gqlが自動で生成される
+
+- localhost:5000/graphqlでgraphqlを扱える
+
+![GraphQLのQuery例](/readme_image/graphql%E3%81%AEquery.png)
