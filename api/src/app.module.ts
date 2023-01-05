@@ -5,6 +5,8 @@ import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { PrismaService } from './prisma.service';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { StockResolver } from './stock/stock.resolver';
+import { StockDividendResolver } from './stock-dividend/stock-dividend.resolver';
 
 @Module({
   imports: [
@@ -14,6 +16,12 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
       autoSchemaFile: 'schema.gql',
     }),
   ],
-  providers: [AppService, PrismaService, UserResolver],
+  providers: [
+    AppService,
+    PrismaService,
+    UserResolver,
+    StockResolver,
+    StockDividendResolver,
+  ],
 })
 export class AppModule {}

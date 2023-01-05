@@ -70,3 +70,5 @@ jest.setup.ts
 
 
 - src配下にcodegenで指定したdocument（graphqlのクエリ文）を自分で作成する
+
+yarn codegenで自動生成

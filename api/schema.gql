@@ -7,6 +7,43 @@ type User {
   name: String!
 }
 
+type Stock {
+  id: ID!
+  name: String!
+}
+
+type StockDividend {
+  stock: Stock
+  stockId: ID!
+  date: DateTime!
+  user: User
+  userId: ID!
+  dividend: Int!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
 type Query {
   getUserById(id: Float!): User
+  getStockById(id: Float!): Stock
+  getStockDividendById(stockId: Float!, userId: Float!, date: DateTime!): StockDividend
+}
+
+type Mutation {
+  createUser(name: String!): User!
+  createStock(data: StockCreateInput!): Stock!
+  createStockDividend(data: StockDividendCreateInput!, userId: Float!, stockId: Float!): StockDividend!
+}
+
+input StockCreateInput {
+  id: Float!
+  name: String!
+}
+
+input StockDividendCreateInput {
+  date: DateTime!
+  dividend: Float!
 }
