@@ -14,7 +14,8 @@
         "burkeholland.simple-react-snippets",
         "infeng.vscode-react-typescript",
         "steoates.autoimport",
-        "eamodio.gitlens"
+        "eamodio.gitlens",
+        "GraphQL.vscode-graphql"
       ]
     }
   }

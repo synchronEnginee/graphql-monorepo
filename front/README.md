@@ -72,3 +72,13 @@ jest.setup.ts
 - src配下にcodegenで指定したdocument（graphqlのクエリ文）を自分で作成する
 
 yarn codegenで自動生成
+
+
+# react-jsonschema-form
+yarn add @rjsf/core @rjsf/utils @rjsf/validator-ajv8
+yarn add @rjsf/mui
+<!-- 依存の関係でバージョン固定 -->
+yarn add ajv@8.11.0
+
+# mui
+yarn add @mui/material @emotion/react @emotion/styled @mui/icons-material

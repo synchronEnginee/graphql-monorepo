@@ -4,3 +4,10 @@ query GetUserById($id: Float!) {
     name
   }
 }
+
+mutation CreateUser($name: String!) {
+  createUser(name: $name) {
+    id
+    name
+  }
+}

@@ -13,13 +13,23 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel-plugin for production.
  */
 const documents = {
-    "query GetUserById($id: Float!) {\n  getUserById(id: $id) {\n    id\n    name\n  }\n}": types.GetUserByIdDocument,
+    "query GetStockDividendById($stockId: Float!, $userId: Float!, $date: DateTime!) {\n  getStockDividendById(stockId: $stockId, userId: $userId, date: $date) {\n    stockId\n    userId\n    date\n    dividend\n  }\n}\n\nmutation CreateStockDividend($data: StockDividendCreateInput!, $userId: Float!, $stockId: Float!) {\n  createStockDividend(data: $data, userId: $userId, stockId: $stockId) {\n    stockId\n    userId\n    date\n    dividend\n  }\n}": types.GetStockDividendByIdDocument,
+    "query GetStockById($id: Float!) {\n  getStockById(id: $id) {\n    id\n    name\n  }\n}\n\nmutation createStock($data: StockCreateInput!) {\n  createStock(data: $data) {\n    id\n    name\n  }\n}": types.GetStockByIdDocument,
+    "query GetUserById($id: Float!) {\n  getUserById(id: $id) {\n    id\n    name\n  }\n}\n\nmutation CreateUser($name: String!) {\n  createUser(name: $name) {\n    id\n    name\n  }\n}": types.GetUserByIdDocument,
 };
 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "query GetUserById($id: Float!) {\n  getUserById(id: $id) {\n    id\n    name\n  }\n}"): (typeof documents)["query GetUserById($id: Float!) {\n  getUserById(id: $id) {\n    id\n    name\n  }\n}"];
+export function graphql(source: "query GetStockDividendById($stockId: Float!, $userId: Float!, $date: DateTime!) {\n  getStockDividendById(stockId: $stockId, userId: $userId, date: $date) {\n    stockId\n    userId\n    date\n    dividend\n  }\n}\n\nmutation CreateStockDividend($data: StockDividendCreateInput!, $userId: Float!, $stockId: Float!) {\n  createStockDividend(data: $data, userId: $userId, stockId: $stockId) {\n    stockId\n    userId\n    date\n    dividend\n  }\n}"): (typeof documents)["query GetStockDividendById($stockId: Float!, $userId: Float!, $date: DateTime!) {\n  getStockDividendById(stockId: $stockId, userId: $userId, date: $date) {\n    stockId\n    userId\n    date\n    dividend\n  }\n}\n\nmutation CreateStockDividend($data: StockDividendCreateInput!, $userId: Float!, $stockId: Float!) {\n  createStockDividend(data: $data, userId: $userId, stockId: $stockId) {\n    stockId\n    userId\n    date\n    dividend\n  }\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "query GetStockById($id: Float!) {\n  getStockById(id: $id) {\n    id\n    name\n  }\n}\n\nmutation createStock($data: StockCreateInput!) {\n  createStock(data: $data) {\n    id\n    name\n  }\n}"): (typeof documents)["query GetStockById($id: Float!) {\n  getStockById(id: $id) {\n    id\n    name\n  }\n}\n\nmutation createStock($data: StockCreateInput!) {\n  createStock(data: $data) {\n    id\n    name\n  }\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "query GetUserById($id: Float!) {\n  getUserById(id: $id) {\n    id\n    name\n  }\n}\n\nmutation CreateUser($name: String!) {\n  createUser(name: $name) {\n    id\n    name\n  }\n}"): (typeof documents)["query GetUserById($id: Float!) {\n  getUserById(id: $id) {\n    id\n    name\n  }\n}\n\nmutation CreateUser($name: String!) {\n  createUser(name: $name) {\n    id\n    name\n  }\n}"];
 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.

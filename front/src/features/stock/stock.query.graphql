@@ -1,0 +1,13 @@
+query GetStockById($id: Float!) {
+  getStockById(id: $id) {
+    id
+    name
+  }
+}
+
+mutation createStock($data: StockCreateInput!) {
+  createStock(data: $data) {
+    id
+    name
+  }
+}

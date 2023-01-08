@@ -1,0 +1,25 @@
+query GetStockDividendById(
+  $stockId: Float!
+  $userId: Float!
+  $date: DateTime!
+) {
+  getStockDividendById(stockId: $stockId, userId: $userId, date: $date) {
+    stockId
+    userId
+    date
+    dividend
+  }
+}
+
+mutation CreateStockDividend(
+  $data: StockDividendCreateInput!
+  $userId: Float!
+  $stockId: Float!
+) {
+  createStockDividend(data: $data, userId: $userId, stockId: $stockId) {
+    stockId
+    userId
+    date
+    dividend
+  }
+}
