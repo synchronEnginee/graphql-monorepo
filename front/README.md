@@ -82,3 +82,7 @@ yarn add ajv@8.11.0
 
 # mui
 yarn add @mui/material @emotion/react @emotion/styled @mui/icons-material
+
+# react-queryとgraphql-request
+
+yarn add @tanstack/react-query graphql-request

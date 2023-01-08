@@ -24,8 +24,10 @@
     "@rjsf/mui": "^5.0.0-beta.15",
     "@rjsf/utils": "^5.0.0-beta.15",
     "@rjsf/validator-ajv8": "^5.0.0-beta.15",
+    "@tanstack/react-query": "^4.20.9",
     "ajv": "8.11.0",
     "graphql": "^16.6.0",
+    "graphql-request": "^5.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -37,6 +39,7 @@
     "@graphql-codegen/typescript-operations": "^2.5.11",
     "@graphql-codegen/typescript-react-query": "^4.0.6",
     "@graphql-codegen/typescript-resolvers": "^2.7.11",
+    "@tanstack/react-query-devtools": "^4.20.9",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/react-hooks": "^8.0.1",
