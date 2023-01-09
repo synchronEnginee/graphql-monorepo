@@ -6,15 +6,21 @@ import jsonSchema from '../../../../json-schema.json'
 
 type Props = {}
 
+const requireFormKey = ['id', 'name'] as const
+type requireFormKeyType = typeof requireFormKey[number]
+export type DefinitionType = typeof jsonSchema['definitions']
+export type DefinitionsKey = keyof DefinitionType
+export type UserProperties = Pick<
+  DefinitionType['User']['properties'],
+  requireFormKeyType
+>
+
 const CreateUserForm = (props: Props) => {
   const schema = jsonSchema
-  type a = typeof jsonSchema['definitions']
-  type key = keyof a
-  type b = a['User']['properties']
 
   // schemaのdefinitionsを不要なキーを捨てて変換して、フォーム自動生成に渡してあげる
   _.update(schema, 'definitions.User.properties', () =>
-    _.pick(schema.definitions.User.properties, ['id', 'name']),
+    _.pick(schema.definitions.User.properties, requireFormKey),
   )
 
   return <Form schema={schema as RJSFSchema} validator={validator} />
