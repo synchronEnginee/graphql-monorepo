@@ -113,3 +113,8 @@ yarn prisma studio
 - localhost:5000/graphqlでgraphqlを扱える
 
 ![GraphQLのQuery例](/readme_image/graphql%E3%81%AEquery.png)
+
+# prismaのDBクライアントを作成
+
+- yarn prisma generate
+  - prisma-jsonschema-generatorによりjsonファイルも自動生成される

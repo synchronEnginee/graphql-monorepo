@@ -41,12 +41,18 @@
         "stock": {
           "$ref": "#/definitions/Stock"
         },
+        "stockId": {
+          "type": "integer"
+        },
         "date": {
           "type": "string",
           "format": "date-time"
         },
         "user": {
           "$ref": "#/definitions/User"
+        },
+        "userId": {
+          "type": "integer"
         },
         "dividend": {
           "type": "integer"
