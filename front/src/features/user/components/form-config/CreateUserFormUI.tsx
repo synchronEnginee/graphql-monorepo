@@ -1,6 +1,6 @@
 import { UiSchema } from '@rjsf/utils'
 
-import { UserProperties } from './CreateUserForm'
+import { UserProperties } from '../CreateUserForm'
 
 export const CreateUserFormUI: { [K in keyof UserProperties]: UiSchema } = {
   id: {

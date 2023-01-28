@@ -35,8 +35,9 @@ services:
     environment:
       - POSTGRES_PASSWORD=passw0rd
     volumes:
-      - ./db:/var/lib/postgresql/data
+      - postgres:/var/lib/postgresql/data
 
 volumes:
   front_node_modules:
   api_node_modules:
+  postgres:
