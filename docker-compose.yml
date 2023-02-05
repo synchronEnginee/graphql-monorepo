@@ -9,7 +9,8 @@ services:
       - ./front:/usr/app/front
       - front_node_modules:/usr/app/front/node_modules
     working_dir: /usr/app/front
-    command: sh -c "apk update && apk add git && yarn install && yarn start"
+    # command: sh -c "apk update && apk add git && yarn install && yarn start"
+    command: /bin/sh -c "while :; do sleep 10; done"
     ports:
       # viteのためポート5173
       - "5173:5173"
